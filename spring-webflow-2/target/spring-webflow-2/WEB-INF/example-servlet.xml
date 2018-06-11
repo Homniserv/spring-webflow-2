@@ -1,0 +1,21 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!-- no version https://stackoverflow.com/questions/29063555/schema-reference-4-failed-to-read-schema-document-http-www-springframework-o Cosmina -->
+	<bean name="/welcome.htm"
+		class="hello.GreetingController" />
+
+<!-- http://www.mkyong.com/spring-mvc/spring-mvc-hello-world-example/ -->
+	<bean id="viewResolver"
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix">
+			<value>/WEB-INF/THYM</value>
+		</property>
+		<property name="suffix">
+			<value>.html</value>
+		</property>
+	</bean>
+
+</beans>
