@@ -3,21 +3,21 @@
  "http://java.sun.com/dtd/web-app_2_3.dtd" >
 
 <web-app>
-  <display-name>Archetype Created Web Application</display-name>
+	<display-name>Archetype Created Web Application</display-name>
 
 
 
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
-		<!-- <param-value>/WEB-INF/applicationContextMoi.xml</param-value> -->
 		<param-value>/WEB-INF/applicationContextMoi.xml</param-value>
 	</context-param>
 
 
-	<!-- root context (vs servlet context https://stackoverflow.com/questions/11708967/what-is-the-difference-between-applicationcontext-and-webapplicationcontext-in-s) -->
-<!-- 	<listener> -->
-<!-- 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class> -->
-<!-- 	</listener> -->
+	<!-- root context (vs servlet context https://stackoverflow.com/questions/11708967/what-is-the-difference-between-applicationcontext-and-webapplicationcontext-in-s) 
+		https://schoudari.wordpress.com/2012/07/23/purpose-of-contextloaderlistener-spring-mvc/ -->
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
 
 	<!-- https://docs.spring.io/spring-framework/docs/3.2.x/spring-framework-reference/html/mvc.html#mvc-servlet -->
 	<!-- 17.2 The DispatcherServlet -->
@@ -29,7 +29,7 @@
 
 	<servlet-mapping>
 		<servlet-name>example</servlet-name>
-		<url-pattern>/</url-pattern>
+		<url-pattern>/*</url-pattern>
 	</servlet-mapping>
 
 

@@ -10,12 +10,22 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
 		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd
 		http://www.springframework.org/schema/context
-	   		http://www.springframework.org/schema/context/spring-context-4.3.xsd
+	   		http://www.springframework.org/schema/context/spring-context.xsd
 	   		 http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd">
 
 	<context:annotation-config />
 
 	<!-- https://docs.spring.io/spring/docs/3.0.0.M4/reference/html/ch03s10.html -->
 	<context:component-scan base-package="hello" />
+
+	<!-- http://forum.spring.io/forum/spring-projects/web/82812-no-mapping-found-for-http-request-with-uri-in-spring-mvc-3 -->
+	<mvc:annotation-driven />
+
+	<!-- https://dzone.com/articles/spring-mvc-3-view-controller -->
+	<!-- <mvc:view-controller path="/" view-name="index"/> -->
+
+	<bean id="greetingController" class="hello.GreetingController">
+	</bean>
+
 
 </beans>	

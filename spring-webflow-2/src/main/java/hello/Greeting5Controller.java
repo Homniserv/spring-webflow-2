@@ -8,7 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.annotation.RequestParam;
 
-public class GreetingController {
+public class Greeting5Controller {
 	/**
 	 * https://spring.io/guides/gs/serving-web-content/
 	 * 
@@ -19,11 +19,11 @@ public class GreetingController {
 	public String greeting(@RequestParam(name = "name", required = false, defaultValue = "World") String name,
 			Model model) {
 		model.addAttribute("name", name);
-		Logger logger = LogManager.getLogger(GreetingController.class);
-		logger.error("in greeting");
+		Logger logger = LogManager.getLogger(Greeting5Controller.class);
+		logger.error("in greeting 5");
 
-		//return "greeting";
-		return "greeting11";
+		// return "greeting";
+		return "greeting5";
 	}
 
 }
